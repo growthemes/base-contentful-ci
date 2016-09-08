@@ -34,10 +34,14 @@ You can use the `grow build` command to build your whole site to the `build` dir
 grow build
 ```
 
-## Staging
+## Staging and deployment
 
-Once you are ready to share your changes with your team, you can stage your workspace to an access-controlled web server. Running the below command will build your site and deploy it, and then provide you with a link to the staging environment.
+This repository demonstrates continuous staging and deployment using Contentful (for CMS) and Google Cloud Storage (for deployment, on both staging and production). To customize the configuration to work with projects owned by you (instead of grow):
 
-```
-grow stage
-```
+1. Replace the Contentful keys with your own Contentful keys.
+1. Replace the default project and buckets in `circle.yaml` and `Makefile`.
+1. Enable the [Google Cloud Storage JSON API](https://console.developers.google.com/apis/api/storage_api/overview)
+1. Create a [Google Cloud service account JSON key](https://console.developers.google.com/apis/credentials)
+  1. Download the JSON key you created.
+  1. Run `base64 <file> | pbcopy`.
+  1. Create a Circle CI environment variable named `CLIENT_SECRET` and paste the encoded key into it.
