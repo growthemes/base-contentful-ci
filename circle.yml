@@ -24,4 +24,4 @@ deployment:
   staging:
     branch: /^((?!master).)*$/
     commands:
-    - make bucket=grow-demo-ci-$SUBDOMAIN deploy
+    - make bucket=grow-ci-$SUBDOMAIN deploy

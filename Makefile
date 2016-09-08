@@ -1,5 +1,5 @@
 project ?= 'grow-ci'
-bucket ?= 'grow-demo-ci'
+bucket ?= 'grow-ci'
 
 deploy:
 	grow build
