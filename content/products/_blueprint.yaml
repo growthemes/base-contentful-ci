@@ -1,2 +1,2 @@
 view: /views/product.html
-path: /{root}/products/{base}/
+path: /{root}/products/{base}.html

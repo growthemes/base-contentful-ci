@@ -1,5 +1,5 @@
 $title: Home
-$path: /{root}/
+$path: /{root}/index.html
 $order: -1
 description: A basic Grow demo website.
 

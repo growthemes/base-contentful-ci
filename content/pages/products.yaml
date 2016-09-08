@@ -1,4 +1,4 @@
-$path: /{root}/products/
+$path: /{root}/products.html
 $view: /views/products.html
 $title: "Products"
 $order: 0
