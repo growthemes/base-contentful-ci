@@ -26,4 +26,4 @@ deployment:
     branch: /^((?!master).)*$/
     commands:
     - make BUCKET=grow-ci-$SUBDOMAIN deploy
-    - make GITHUB_COMMIT=$CIRCLE_SHA1 update-commit-status
+    - make BUCKET=grow-ci-$SUBDOMAIN GITHUB_COMMIT=$CIRCLE_SHA1 update-commit-status
