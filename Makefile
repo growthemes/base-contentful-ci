@@ -4,7 +4,6 @@ GITHUB_USERNAME ?= growthemes
 GITHUB_REPO ?= base-contentful-ci
 GITHUB_ACCESS_TOKEN ?=
 GITHUB_COMMIT ?=
-DEPLOY_URL = http://$(BUCKET).storage.googleapis.com/index.html
 
 deploy:
 	grow build
@@ -18,4 +17,4 @@ update-commit-status:
 	    -H "Content-Type: application/json" \
 	    -H "Authorization: token $(GITHUB_ACCESS_TOKEN)" \
 	    -X POST \
-	    -d "{\"state\": \"success\", \"context\": \"grow\", \"description\": \"Preview: $(DEPLOY_URL)\", \"target_url\": \"$(DEPLOY_URL)\"}"
+	    -d "{\"state\": \"success\", \"context\": \"grow\", \"description\": \"View staging ⟶\", \"target_url\": \"http://$(BUCKET).storage.googleapis.com/index.html\"}"
