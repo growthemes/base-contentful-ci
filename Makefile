@@ -1,3 +1,2 @@
-test: ;
 deploy:
 	grow build
