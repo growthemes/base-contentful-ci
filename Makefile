@@ -4,6 +4,7 @@ GITHUB_USERNAME ?= growthemes
 GITHUB_REPO ?= base-contentful-ci
 GITHUB_ACCESS_TOKEN ?=
 GITHUB_COMMIT ?=
+DEPLOY_URL = http://$(BUCKET).storage.googleapis.com/index.html
 
 deploy:
 	grow build
@@ -13,7 +14,8 @@ deploy:
 	gsutil -m rsync -R build gs://$(BUCKET)
 
 update-commit-status:
-	curl "https://api.github.com/repos/$(GITHUB_USERNAME)/$(GITHUB_REPO)/statuses/$(GITHUB_COMMIT)?access_token=$(GITHUB_ACCESS_TOKEN)" \
+	curl "https://api.github.com/repos/$(GITHUB_USERNAME)/$(GITHUB_REPO)/statuses/$(GITHUB_COMMIT)" \
 	    -H "Content-Type: application/json" \
+	    -H "Authorization: token $(GITHUB_ACCESS_TOKEN)" \
 	    -X POST \
-	    -d "{\"state\": \"success\", \"description\": \"Grow\", \"target_url\": \"http://$(BUCKET).storage.googleapis.com/index.html\"}"
+	    -d "{\"state\": \"success\", \"context\": \"grow\", \"description\": \"Preview: $(DEPLOY_URL)\", \"target_url\": \"$(DEPLOY_URL)\"}"
