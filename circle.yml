@@ -20,13 +20,10 @@ deployment:
   prod:
     branch: master
     commands:
-    - make \
-        GITHUB_COMMIT=$CIRCLE_SHA1 \
-        deploy
+    - make deploy
+    - make GITHUB_COMMIT=$CIRCLE_SHA1 update-commit-status
   staging:
     branch: /^((?!master).)*$/
     commands:
-    - make \
-        GITHUB_COMMIT=$CIRCLE_SHA1 \
-        BUCKET=grow-ci-$SUBDOMAIN \
-        deploy
+    - make BUCKET=grow-ci-$SUBDOMAIN deploy
+    - make GITHUB_COMMIT=$CIRCLE_SHA1 update-commit-status

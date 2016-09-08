@@ -12,7 +12,7 @@ deploy:
 	gsutil web set -m index.html -e 404.html gs://$(BUCKET) || echo "Website configured."
 	gsutil -m rsync -R build gs://$(BUCKET)
 
-update-status:
+update-commit-status:
 	curl "https://api.github.com/repos/$(GITHUB_USERNAME)/$(GITHUB_REPO)/statuses/$(GITHUB_COMMIT)?access_token=$(GITHUB_ACCESS_TOKEN)" \
 	    -H "Content-Type: application/json" \
 	    -X POST \
