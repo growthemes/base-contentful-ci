@@ -1,0 +1,21 @@
+general:
+  artifacts: ~
+
+machine:
+  python:
+    version: 2.7.11
+  
+dependencies:
+  cache_directories:
+  - build
+  - lib
+
+deployment:
+  prod:
+    branch: master
+    commands:
+    - make deploy
+  staging:
+    branch: /^((?!master).)*$/
+    commands:
+    - make deploy

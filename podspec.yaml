@@ -1,0 +1,47 @@
+grow_version: ">=0.0.60"
+home: /content/pages/home.yaml
+root: ""
+
+localization:
+  default_locale: en
+
+title: "Site Title"
+meta:
+  google_analytics_id: ""
+  google_site_verification: ""
+  image_path: /source/images/social_image.jpg
+  favicon_path: /source/images/favicon.png
+  social:
+    twitter: example
+    facebook: example
+
+static_dirs:
+- static_dir: /dist/
+  serve_at: "/assets/static/"
+  fingerprinted: true
+- static_dir: /source/images/
+  serve_at: "/assets/static/images/"
+  fingerprinted: true
+
+sitemap:
+  enabled: true
+
+preprocessors:
+- kind: sass
+  name: sass
+  sass_dir: /source/sass/
+  out_dir: /dist/css/
+- kind: contentful
+  inject: true  # Displays "edit" button on development server.
+  space: w847x5zrl1tl
+  keys:
+    preview: e260cb62e28ad8e83d7afceb31d5b9dd10bd8843b3ba16c27c6571cce44380d8
+    # Switch between "preview" and "production" keys for staging.
+    # production: 5ba79c3ece76061ea4345fb5dde5406833486f6b131c3a68efda0907325811bb
+  bind:
+  - collection: /content/brands/
+    contentModel: sFzTZbSuM8coEwygeUYes
+  - collection: /content/products/
+    contentModel: 2PqfXUJwE8qSYKuM0U6w8M
+  - collection: /content/categories/
+    contentModel: 6XwpTaSiiI2Ak2Ww0oi6qa

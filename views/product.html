@@ -1,0 +1,8 @@
+{% extends "/views/base.html" %}
+
+{% block main %}
+  <h2>{{doc.productName}}</h2>
+  <p>{{doc.productDescription}}</p>
+  <p><a href="{{doc.website}}">Website</a></p>
+  <p><img src="{{doc.image[0]}}" style="max-width: 100%"></p>
+{% endblock %}

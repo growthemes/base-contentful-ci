@@ -1,0 +1,14 @@
+{% extends "/views/base.html" %}
+
+{% block main %}
+  <h2>{{doc.title}}</h2>
+  {% for group in g.docs('products')|groupby('categories.0') %}
+  {% set category = g.doc('/content/categories/{}.yaml'.format(group.grouper)) %}
+  <h3>{{category.title}}</h3>
+  <ul>
+    {% for product in group.list %}
+      <li><a href="{{product.url.path}}">{{product.productName}}</a></li>
+    {% endfor %}
+  </ul>
+  {% endfor %}
+{% endblock %}
