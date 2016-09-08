@@ -1,9 +1,9 @@
-PROJECT ?= 'grow-ci'
-BUCKET ?= 'grow-ci'
-GITHUB_USERNAME ?= 'growthemes'
-GITHUB_REPO ?= 'base-contentful-ci'
-GITHUB_ACCESS_TOKEN ?= ''
-GITHUB_COMMIT ?= ''
+PROJECT ?= grow-ci
+BUCKET ?= grow-ci
+GITHUB_USERNAME ?= growthemes
+GITHUB_REPO ?= base-contentful-ci
+GITHUB_ACCESS_TOKEN ?=
+GITHUB_COMMIT ?=
 
 deploy:
 	grow build
