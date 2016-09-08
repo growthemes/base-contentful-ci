@@ -3,7 +3,8 @@ machine:
     version: 2.7.11
 
 test:
-  override: ~
+  override:
+  - echo ""
   
 dependencies:
   cache_directories:
