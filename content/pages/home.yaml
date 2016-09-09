@@ -5,13 +5,13 @@ description: A basic Grow demo website.
 
 partials:
 - partial: /views/partials/hero.html
-  title: Welcome to your website
+  title: Welcome to your website. This is a test. Hello Jens! OK. Trying to fix this.
   subtitle: >-
       This is a basic demonstration that shows how to use Grow to build a few
       pages. What you see on this site is entirely controlled by the union of
       content files and template files. Content is kept separate from
       presentation. Some of the pages use YAML and partial templates, other
-      pages just use Markdown. Try exploring.
+      pages just use Markdown. Try exploring. I am making changes.
   cta:
     title: Learn about us 
     url: !g.url "/content/pages/about.md"
